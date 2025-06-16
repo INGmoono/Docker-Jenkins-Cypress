@@ -1,0 +1,8 @@
+FROM jenkins/jenkins:lts-jdk11
+
+USER root
+
+# Instala Docker CLI en el contenedor de jenkins
+RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/*
+
+USER jenkins
